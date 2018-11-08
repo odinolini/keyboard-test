@@ -1,0 +1,48 @@
+.key {
+    height: 30px;
+    width: 30px;
+    background-color: grey;
+    display: inline-block;
+    color: whitesmoke;
+    margin: 2px;
+}
+
+.spacebar {
+    margin-left: -2px;
+    margin-right: -2px;
+    width: 36px;
+}
+
+.spacebar-qwerty {
+    margin-left: -2px;
+    margin-right: -2px;
+    width: 36px;
+}
+
+
+/*  */
+.spacebar:nth-child(4) {
+    border-right: solid white 1px;
+}
+.spacebar:nth-child(5) {
+    border-left: solid white 1px;
+}
+
+.key-active {
+    background-color: red;
+}
+
+.key:focus {
+    background-color: red;
+}
+
+.key-container {
+    text-align: center;
+}
+
+.textfield {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
