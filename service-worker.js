@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/keyboard-test/precache-manifest.0fe297e9f5eb60d3e9e76d63cc5c77c1.js"
+  "/keyboard-test/precache-manifest.7ec9ba72e96b3498bcb2e1204eec91db.js"
 );
 
 workbox.clientsClaim();
