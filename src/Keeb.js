@@ -22,7 +22,8 @@ export default class Keeb extends Component {
             x: 0,
             y: 0,
             textFieldValue: "",
-            keyComponentArr: []
+            keyComponentArr: [],
+            firstPress: true
         };
     }
 
@@ -48,10 +49,13 @@ export default class Keeb extends Component {
                 if (x < keys.length - 1) {
                     //Acounting for rows of different length
                     if ((x === 2 && y !== 0 && y !== 8 ) || (x === 1 && y === 9) ) {
-                        y--;
+                        //y--;
                     } else if (x === 2 && y === 8) {
-                        y--;
-                    } 
+                        //y--;
+                    } if (this.state.firstPress) {
+                        this.setState({firstPress: false});
+                        this.test("start");
+                    }
                     x++;
                 }
                 break;
@@ -63,7 +67,7 @@ export default class Keeb extends Component {
                 case 38: //Up
                 if (x > 0) {
                     if (x === 3) {
-                        y++;
+                        //y++;
                     }
                     x--;
                 }
@@ -95,9 +99,9 @@ export default class Keeb extends Component {
         let newTfv = textFieldValue + currentKey;
         this.setState({ textFieldValue: newTfv });
 
-        if (newTfv.length === 1) {
+/*         if (newTfv.length === 1) {
             this.test("start");
-        }
+        } */
 
         if (newTfv === this.props.testWord) {
             this.test("stop");
@@ -124,10 +128,7 @@ export default class Keeb extends Component {
                     shouldBeFocused = true;
                 }
 
-                console.log(keyArr);
-
                 if (keyArr[x][y] === " ") {
-                    console.log("yeaha");
                     temparr.push(<Key spacebar_qwerty focus={shouldBeFocused}>{keyArr[x][y]}</Key>)
                 } else {
                     temparr.push(<Key focus={shouldBeFocused}>{keyArr[x][y]}</Key>)

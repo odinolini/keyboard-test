@@ -62,9 +62,9 @@ class App extends Component {
                                         keys={[
                                             "1234567890",
                                             "qwertyuiop",
-                                            "asdfghjkl",
-                                            "zxcvbnm⌫",
-                                            "        "
+                                            "asdfghjkl-",
+                                            "zxcvbnm⌫⌫-",
+                                            "          "
                                         ]}
                                     />
                                 )}

@@ -25,7 +25,8 @@ export default class Kb extends Component {
             y: 0,
             keyArr: this.props.keys.split(""),
             textFieldValue: "",
-            preventNextEnter: false
+            preventNextEnter: false,
+            firstPress: true
         };
     }
 
@@ -65,6 +66,10 @@ export default class Kb extends Component {
             case 40: //Down
                 if (x < keys.length - 1) {
                     x++;
+                }
+                if (this.state.firstPress) {
+                    this.setState({firstPress: false});
+                    this.test("start");
                 }
                 break;
             case 39: //Right
@@ -146,9 +151,9 @@ export default class Kb extends Component {
         this.setState({ textFieldValue: newTfv });
         this.props.onChange( newTfv );
 
-        if (newTfv.length === 1) {
-            this.test("start");
-        }
+    /*         if (newTfv.length === 1) {
+                this.test("start");
+            } */
 
         if (newTfv === this.props.testWord) {
             this.test("stop");
