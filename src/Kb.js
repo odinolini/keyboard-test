@@ -80,21 +80,27 @@ export default class Kb extends Component {
                 }
                 break;
             case 38: //Up
+            
+            //For the space function
+            if ((x === 1 || x === 0) && y >= 0 && y < 3) {
                 if (x > 0) {
                     x--;
                 }
-
-                //For the space function
-                if ((x === 1 || x === 0) && y >= 0 && y < 3) {
-                    this.addSpace(x, y);
-                    return;
+                this.addSpace(x, y);
+                return;
+            }
+            //Backspace function
+            if ((x === 1 || x === 0) && y >= 3 && y < 6) {
+                if (x > 0) {
+                    x--;
                 }
-                //Backspace function
-                if ((x === 1 || x === 0) && y >= 3 && y < 6) {
-                    this.backSpace(x, y);
-                    return;
-                }
-
+                this.backSpace(x, y);
+                return;
+            }
+            
+            if (x > 0) {
+                x--;
+            }
                 break;
             case 37: //Left
                 if (y > 0) {
